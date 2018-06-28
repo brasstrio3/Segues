@@ -36,6 +36,30 @@
                                 <rect key="frame" x="143" y="394" width="89" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="goToConfirmLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3O-rP-Fht"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o9W-dH-NO7">
+                                <rect key="frame" x="16" y="458" width="127" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqg-6s-BaR">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
+                                        <state key="normal" title="Forgot Username?"/>
+                                        <connections>
+                                            <action selector="findUserName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XyY-iI-wdp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBj-t5-6sH">
+                                <rect key="frame" x="236" y="458" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="findPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QF9-6N-Nvc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.1803227287387652" blue="0.25472014606896487" alpha="0.45323503521126762" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,42 +69,70 @@
                         <barButtonItem key="backBarButtonItem" title="Login Screen" id="u5H-MT-2aT"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnForgotPW" destination="hBj-t5-6sH" id="Lvf-qz-dbr"/>
+                        <outlet property="btnForgotUN" destination="Zqg-6s-BaR" id="lut-Qo-V1A"/>
+                        <outlet property="btnLogIn" destination="y3b-l2-cNx" id="yxS-lS-TQu"/>
                         <outlet property="displayUser" destination="u5H-MT-2aT" id="Dcg-Ao-db4"/>
                         <outlet property="logInButton" destination="y3b-l2-cNx" id="s4R-hG-FVm"/>
                         <outlet property="username" destination="yG6-mi-hWY" id="CFV-3K-dgW"/>
-                        <segue destination="Bz9-5T-HD3" kind="show" id="DCl-nA-8JP"/>
+                        <segue destination="Bz9-5T-HD3" kind="show" identifier="User" id="Zts-CX-JhP"/>
+                        <segue destination="ZHi-6q-LPt" kind="show" identifier="Forgot Username" id="bam-7q-MAR"/>
+                        <segue destination="3NN-qy-jCE" kind="show" identifier="Forgot Password" id="Tfw-e7-qMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="423.19999999999999" y="38.23088455772114"/>
         </scene>
-        <!--User-->
+        <!--View Controller-->
+        <scene sceneID="RYQ-lt-2So">
+            <objects>
+                <viewController id="ZHi-6q-LPt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IM2-x1-bFa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.02042284612004619" green="1" blue="0.099468096987344823" alpha="0.44732064260563381" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="fcA-Ep-fSN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pmw-Nd-q94"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ve-Ud-PuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="324"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sUE-cS-5ml">
+            <objects>
+                <viewController id="3NN-qy-jCE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="noZ-To-afK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.93025139791469336" blue="1" alpha="0.46159771126760563" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Z61-wx-PZq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H05-Za-SWj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFf-jP-Qa1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1202" y="1012"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="dbc-vj-gn4">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PxJ-Fu-oeh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Bz9-5T-HD3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f5g-WF-jly">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8A-XD-rs7">
-                                <rect key="frame" x="108" y="140" width="159" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="0.98964289196773747" green="1" blue="0.068994521487209637" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="nOm-h2-81W"/>
                     </view>
-                    <navigationItem key="navigationItem" title="User" id="Ge6-em-pmF">
+                    <navigationItem key="navigationItem" id="Ge6-em-pmF">
                         <barButtonItem key="backBarButtonItem" title="Login Screen" id="7oQ-uO-PwL"/>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PxJ-Fu-oeh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152.8" y="36.431784107946029"/>
+            <point key="canvasLocation" x="1202" y="-398"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="goa-eZ-5Xs">
